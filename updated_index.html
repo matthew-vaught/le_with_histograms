@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NBA Height Visualization</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      color: #1d428a;
+      text-align: center;
+    }
+    .instructions {
+      background-color: #fffaed;
+      border-left: 4px solid #ffc107;
+      padding: 12px 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NBA Team Height Distribution</h1>
+  
+  <div class="instructions">
+    <strong>How to use:</strong> 
+    <ul>
+      <li>Hover over any team point on the left chart to see its height distribution</li>
+      <li>Search for a specific team by typing its ID (e.g., 2016GSW for 2016 Golden State Warriors)</li>
+      <li>When searching, the matching team point will be highlighted</li>
+      <li>Points are colored by season - newer seasons appear in lighter colors</li>
+    </ul>
+  </div>
+  
+  <iframe src="enhanced_visualization.html" style="width:100%; height:800px; border:none;"></iframe>
+  
+  <script>
+    // This script will communicate with the iframe once loaded
+    window.addEventListener('load', function() {
+      // Your enhanced visualization is already configured within the HTML file
+    });
+  </script>
+</body>
+</html>
