@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Team Height Distribution Analysis</title>
+    
+    <!-- Bokeh CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.min.css">
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.css">
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.css">
+    
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-api-3.2.2.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background-color: #1d428a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #c8102e;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+        
+        .instructions {
+            background-color: #fffaed;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NBA Team Height Distribution Analysis (2001-2024)</h1>
+        <div class="subtitle">Exploring the evolution of roster height patterns</div>
+    </header>
+    
+    <div class="container">
+        <div class="instructions">
+            <strong>How to use:</strong> 
+            <ul>
+                <li>Hover over any team point on the left chart to see its height distribution</li>
+                <li>Search for a specific team by typing its ID (e.g., 2016GSW for 2016 Golden State Warriors)</li>
+                <li>Points are colored by season - newer seasons appear in lighter colors</li>
+            </ul>
+        </div>
+        
+        <!-- Embed the standalone visualization using an iframe -->
+        <iframe src="nba_height_visualization_enhanced.html"></iframe>
+    </div>
+</body>
+</html>
