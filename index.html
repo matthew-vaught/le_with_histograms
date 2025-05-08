@@ -21,6 +21,8 @@
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+            touch-action: manipulation; /* Prevent double-tap zoom */
         }
         
         header {
@@ -61,19 +63,46 @@
             height: 700px;
             border: none;
             margin-top: 10px;
+            overflow: hidden; /* Prevent scrollbars inside iframe */
+            -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .container {
                 padding: 10px;
+                max-width: 100%;
             }
             
             h1 {
                 font-size: 1.8em;
             }
             
+            .instructions {
+                padding: 10px;
+            }
+            
             iframe {
-                height: 600px;
+                height: 800px; /* Taller on tablets for better viewing */
+                width: 100%;
+                overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        
+        /* iPad-specific adjustments */
+        @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1024px) {
+            body {
+                font-size: 16px;
+            }
+            
+            iframe {
+                height: 900px; /* Extra height for iPad */
+            }
+            
+            .instructions li {
+                margin-bottom: 8px; /* More space between list items for touch */
             }
         }
     </style>
@@ -88,9 +117,10 @@
         <div class="instructions">
             <strong>How to use:</strong> 
             <ul>
-                <li>Hover over any team point on the left chart to see its height distribution</li>
+                <li><b>Tap or hover</b> over any team point on the left chart to see its height distribution</li>
                 <li>Search for a specific team by typing its ID (e.g., 2016GSW for 2016 Golden State Warriors)</li>
                 <li>Points are colored by season - newer seasons appear in lighter colors</li>
+                <li><i>On iPad:</i> Tap directly on points to select them - the selected team will be highlighted with a red circle</li>
             </ul>
         </div>
         
